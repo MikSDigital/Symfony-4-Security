@@ -1,5 +1,4 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     encoders:
       App\Entity\User:
         algorithm: bcrypt
@@ -26,6 +25,7 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/addFirstUser, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
         - { path: ^/manageUsers, roles: ROLE_ADMIN }
         - { path: ^/editUser, roles: ROLE_ADMIN }

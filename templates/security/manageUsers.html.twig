@@ -23,6 +23,9 @@
                 Roles
             </th>
             <th>
+                Status
+            </th>
+            <th>
                 Edit
             </th>
         </tr>
@@ -35,6 +38,17 @@
                     {% for role in user.roles %}
                         {{ role[5:] }},                         
                     {% endfor %}
+                </td>
+                <td>
+                    <a href="{{ path('user.changeStatus', {id: user.id}) }}">
+                        {% if user.active %}
+                            <button class="btn btn-yes">YES
+                        {% else %}
+                            <button class="btn btn-no">NO
+                        {% endif %}
+                            
+                        </button>    
+                    </a>
                 </td>
                 <td>
                     <a href="{{ path('user.edit', {id: user.id}) }}">

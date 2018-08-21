@@ -136,6 +136,20 @@ th {
     font-size: 9px;
   }
   
+  .btn-yes {
+    padding: 3px 9px;
+    font-size: 9px;
+    background-color: green;
+    color: white;
+  }
+  
+  .btn-no {
+    padding: 3px 9px;
+    font-size: 9px;
+    background-color: red;
+    color: white;
+  }
+  
   .btn-logo {
     padding: 3px 36px;
     font-size: 18px;

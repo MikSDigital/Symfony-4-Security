@@ -38,6 +38,11 @@ class User implements UserInterface
      */
     private $roles;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,5 +113,17 @@ class User implements UserInterface
 
     public function eraseCredentials() {
 
+    }
+    
+    public function setActive($active): self
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    public function getActive()
+    {
+        return $this->active;
     }
 }
