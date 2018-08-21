@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Manage Users{% endblock %}
+
+{% block body %}
+    <div>        
+        <a href="{{ path('user.add') }}">
+            <button class="btn btn-edit">Add new User</button>    
+        </a>
+    </div>
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Edit
+            </th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {{ role[5:] }},                         
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{{ path('user.edit', {id: user.id}) }}">
+                        <button class="btn btn-edit">Edit</button>    
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

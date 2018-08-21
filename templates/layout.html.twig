@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" async href="{{asset('css/base.css')}}" />
+            <link rel="stylesheet" async href="{{asset('css/login.css')}}" />
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div>                    
+                    <a href="/"><button class="btn-logo">Project</button></a>
+                </div>
+            </div>
+            <div class="main">
+                
+                {% block body %}
+                
+                {% endblock %}
+            </div>  
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

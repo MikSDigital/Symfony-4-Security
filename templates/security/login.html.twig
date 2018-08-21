@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    
+    <form action="{{ path('login') }}" method="POST">
+        <div class="login">
+            <div>
+                <input type="text" name="_username" value="{{last_username}}" placeholder="Pass username">
+            </div>
+            <div>
+                <input type="password" name="_password">                
+            </div>
+            <div>
+                <button class="btn" type="submit">Login</button>                
+            </div>
+        </div>
+
+
+    </form>
+    {% if error %}
+        <span style="color:red;">{{ error.messageKey }}</span>
+    {% endif %}
+    <span style="color:red;"></span>
+
+{% endblock %}

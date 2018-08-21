@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block leftMenu %}
+    <div class="option">
+        <a href="/changePassword/{{user.id}}"><button class="btn btn-menu">Change password</button></a>
+    </div>     
+    <div class="option">
+        <a href="/userSettings/{{user.id}}"><button class="btn btn-menu">User Settings</button></a>
+    </div>    
+{% endblock %}
+
+{% block body %}
+    
+{% endblock %}
